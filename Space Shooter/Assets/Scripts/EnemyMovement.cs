@@ -29,7 +29,7 @@ public class EnemyMovement : MonoBehaviour {
 
     private void Update()
     {
-        //Turn();
+        Turn();
         Move();
     }
 
