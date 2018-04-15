@@ -15,6 +15,15 @@ public class EnemyMovement : MonoBehaviour {
     [SerializeField]
     private Thruster[] thrusters;
 
+    [SerializeField]
+    private float pathFindingRaycastOffset = 2.5f;
+
+    [SerializeField]
+    private float pathDetectionDistance = 20f;
+
+    [SerializeField]
+    private float rotaionOffset = 5f;
+
     private Transform shipTransform;
 
     private void Awake()
@@ -29,7 +38,7 @@ public class EnemyMovement : MonoBehaviour {
 
     private void Update()
     {
-        Turn();
+        PathFinding();
         Move();
     }
 
@@ -43,5 +52,57 @@ public class EnemyMovement : MonoBehaviour {
     private void Move()
     {
         shipTransform.position += shipTransform.forward * Time.deltaTime * movementSpeed;
+    }
+
+    private void PathFinding()
+    {
+        RaycastHit hit;
+
+        Vector3 raycastOffset = Vector3.zero;
+
+        Vector3 left = shipTransform.position - shipTransform.right * pathFindingRaycastOffset;
+        Vector3 right = shipTransform.position + shipTransform.right * pathFindingRaycastOffset;
+        Vector3 up = shipTransform.position + shipTransform.up * pathFindingRaycastOffset;
+        Vector3 down = shipTransform.position - shipTransform.up * pathFindingRaycastOffset;
+
+        Debug.DrawRay(left, shipTransform.forward * pathDetectionDistance, Color.green);
+        Debug.DrawRay(right, shipTransform.forward * pathDetectionDistance, Color.cyan);
+        Debug.DrawRay(up, shipTransform.forward * pathDetectionDistance, Color.green);
+        Debug.DrawRay(down, shipTransform.forward * pathDetectionDistance, Color.green);
+
+        if (Physics.Raycast(left, shipTransform.forward, out hit, pathDetectionDistance))
+        {
+            raycastOffset += Vector3.right;
+            Debug.Log("Hit left " + raycastOffset);
+        }
+        else if (Physics.Raycast(right, shipTransform.forward, out hit, pathDetectionDistance))
+        {
+            raycastOffset -= Vector3.right;
+            Debug.Log("Hit right " + raycastOffset);
+        }
+
+        if (Physics.Raycast(up, shipTransform.forward, out hit, pathDetectionDistance))
+        {
+            raycastOffset -= Vector3.up;
+        }
+        else if (Physics.Raycast(down, shipTransform.forward, out hit, pathDetectionDistance))
+        {
+            raycastOffset += Vector3.up;
+        }
+
+
+        if(raycastOffset != Vector3.zero)
+        {
+            Debug.Log(shipTransform.rotation);
+            Vector3 rotation = raycastOffset * rotaionOffset * Time.deltaTime;
+            Debug.Log("in corection" + rotation);
+            shipTransform.Rotate(rotation);
+
+            Debug.Log("in corection" + shipTransform.rotation);
+        }
+        else
+        {
+            Turn();
+        }
     }
 }
