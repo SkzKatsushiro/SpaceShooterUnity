@@ -93,12 +93,9 @@ public class EnemyMovement : MonoBehaviour {
 
         if(raycastOffset != Vector3.zero)
         {
-            Debug.Log(shipTransform.rotation);
-            Vector3 rotation = raycastOffset * rotaionOffset * Time.deltaTime;
-            Debug.Log("in corection" + rotation);
-            shipTransform.Rotate(rotation);
-
-            Debug.Log("in corection" + shipTransform.rotation);
+            Vector3 position = raycastOffset - shipTransform.position;
+            Quaternion rotation = Quaternion.LookRotation(position);
+            shipTransform.rotation = Quaternion.Slerp(shipTransform.rotation, rotation, rotaionOffset * Time.deltaTime);
         }
         else
         {
