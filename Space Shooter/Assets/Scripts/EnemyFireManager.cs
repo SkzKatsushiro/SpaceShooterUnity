@@ -25,6 +25,11 @@ public class EnemyFireManager : MonoBehaviour {
     private void Update()
     {
 
+        if (!FoundTarget())
+        {
+            return;
+        }
+
         if (IsInFront() && HasLineOfSight())
         {
             FireLasers();
@@ -47,7 +52,7 @@ public class EnemyFireManager : MonoBehaviour {
         if (Mathf.Abs(angle) > 90 && Mathf.Abs(angle) < 270)
         {
             Debug.DrawLine(thisTransform.position, targetTransform.position, Color.yellow);
-
+            Debug.Log("IsInFront()");
             return true;
         }
  
@@ -62,8 +67,8 @@ public class EnemyFireManager : MonoBehaviour {
 
         if(Physics.Raycast(thisTransform.position, direction, out hit, laserDistance))
         {
-            //Debug.DrawRay(thisTransform.position, hit.point, Color.red);
-            //Debug.Log("Hit tag: "+ hit.transform.tag);
+            Debug.DrawRay(thisTransform.position, hit.point, Color.red);
+            Debug.Log("Hit tag: "+ hit.transform.tag);
             if (hit.transform.CompareTag("Player"))
             {
                 return true;
@@ -71,5 +76,20 @@ public class EnemyFireManager : MonoBehaviour {
         }
 
         return false;
+    }
+
+    bool FoundTarget()
+    {
+        if (targetTransform == null)
+        {
+            targetTransform = GameObject.FindGameObjectWithTag("Player").transform;
+            Debug.Log("Found target", targetTransform);
+            return false;
+           
+        }
+        else
+        {
+            return true;
+        }
     }
 }

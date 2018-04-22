@@ -5,7 +5,7 @@ public class FireManager : MonoBehaviour
     [SerializeField]
     private LaserGun[] laserGuns;
 
-    void Update()
+    void LateUpdate()
     {
         if (Input.GetMouseButton(0))
         {

@@ -5175,6 +5175,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 1980770782751402, guid: 22c469dbe9fb0fa43a8259fbbfe0c174, type: 2}
   explosionDuration: 2
+  maxHealth: 10
+  regenerationRate: 2
+  regenarationAmount: 1
+  currentHealth: 10
 --- !u!114 &114699822231080934
 MonoBehaviour:
   m_ObjectHideFlags: 1

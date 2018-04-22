@@ -81,7 +81,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e887090b42a9d114d9c516e1b00ed1ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 100
+  movementSpeed: 110
   timeAlive: 0.45
 --- !u!120 &120022971708310886
 LineRenderer:

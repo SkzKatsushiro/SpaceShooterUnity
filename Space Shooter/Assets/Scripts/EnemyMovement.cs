@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 
 [DisallowMultipleComponent]
-public class EnemyMovement : MonoBehaviour {
+public class EnemyMovement : MonoBehaviour
+{
 
     [SerializeField]
     private Transform target;
@@ -29,15 +30,14 @@ public class EnemyMovement : MonoBehaviour {
     private void Awake()
     {
         shipTransform = transform;
-
-        foreach (Thruster truster in thrusters)
-        {
-            truster.Activate();
-        }
     }
 
     private void Update()
     {
+        if (!FoundTarget())
+        {
+            return;
+        }
         PathFinding();
         Move();
     }
@@ -73,12 +73,10 @@ public class EnemyMovement : MonoBehaviour {
         if (Physics.Raycast(left, shipTransform.forward, out hit, pathDetectionDistance))
         {
             raycastOffset += Vector3.right;
-            Debug.Log("Hit left " + raycastOffset);
         }
         else if (Physics.Raycast(right, shipTransform.forward, out hit, pathDetectionDistance))
         {
             raycastOffset -= Vector3.right;
-            Debug.Log("Hit right " + raycastOffset);
         }
 
         if (Physics.Raycast(up, shipTransform.forward, out hit, pathDetectionDistance))
@@ -91,7 +89,7 @@ public class EnemyMovement : MonoBehaviour {
         }
 
 
-        if(raycastOffset != Vector3.zero)
+        if (raycastOffset != Vector3.zero)
         {
             Vector3 position = raycastOffset - shipTransform.position;
             Quaternion rotation = Quaternion.LookRotation(position);
@@ -100,6 +98,23 @@ public class EnemyMovement : MonoBehaviour {
         else
         {
             Turn();
+        }
+    }
+
+    bool FoundTarget()
+    {
+        if (target == null)
+        {
+            target = GameObject.FindGameObjectWithTag("Player").transform;
+            foreach (Thruster truster in thrusters)
+            {
+                truster.Activate();
+            }
+            return false;
+        }
+        else
+        {
+            return true;
         }
     }
 }
