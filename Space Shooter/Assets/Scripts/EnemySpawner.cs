@@ -10,9 +10,15 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField]
     float spawnTimer = 5f;
 
-    private void Start()
+    private void OnEnable()
     {
-        StartSpawning();
+        EventManager.onStartGame += StartSpawning;
+    }
+
+    private void OnDisable()
+    {
+        StopSpawning();
+        EventManager.onStartGame -= StartSpawning;
     }
 
     void SpawnEnemy()

@@ -12,12 +12,17 @@ public class AsteroidManager : MonoBehaviour {
     [SerializeField]
     int gridSpacing = 10;
 
-    public void Start()
+    public void OnEnable()
     {
-        PlaceAsteroid();
+        EventManager.onStartGame += PlaceAsteroids;
     }
 
-    private void PlaceAsteroid()
+    public void OnDisable()
+    {
+        EventManager.onStartGame -= PlaceAsteroids;
+    }
+
+    private void PlaceAsteroids()
     {
         for (int x = 0; x < maxAsteroids; x++)
         {
