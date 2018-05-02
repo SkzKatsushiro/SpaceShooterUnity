@@ -35,7 +35,9 @@ public class TieFighter : MonoBehaviour {
         if (currentHealth >= maxHealth)
         {
             currentHealth = maxHealth;
-        } 
+        }
+
+        EventManager.TakeDamage(currentHealth / (float)maxHealth);
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -47,6 +49,13 @@ public class TieFighter : MonoBehaviour {
     private void TakeDamage(Vector3 pos, int damageAmount = 1)
     {
         currentHealth -= damageAmount;
+
+        if (currentHealth < 0)
+        {
+            currentHealth = 0;
+        }
+
+        EventManager.TakeDamage(currentHealth / (float) maxHealth);
 
         if (currentHealth <= 0)
         {

@@ -3253,7 +3253,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   rotationalDamp: 2
-  movementSpeed: 1
+  movementSpeed: 10
   thrusters:
   - {fileID: 114233753417848076}
   - {fileID: 114039136840717088}
