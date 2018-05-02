@@ -24,11 +24,17 @@ public class FollowPayer : MonoBehaviour {
 
     private void LateUpdate()
     {
+        if (player == null)
+        {
+            return;
+        }
+
         SmoothFollow();
     }
 
     private void SmoothFollow()
     {
+
         Vector3 toPos = player.position + (player.rotation * offsetDistance);
         Vector3 curPos = Vector3.SmoothDamp(cameraTransform.position, toPos, ref velovity, distanceDamp);
         cameraTransform.position = curPos;

@@ -105,7 +105,13 @@ public class EnemyMovement : MonoBehaviour
     {
         if (target == null)
         {
-            target = GameObject.FindGameObjectWithTag("Player").transform;
+            GameObject player = GameObject.FindGameObjectWithTag("Player");
+
+            if (player != null)
+            {
+                target = player.transform;
+            }
+
             foreach (Thruster truster in thrusters)
             {
                 truster.Activate();

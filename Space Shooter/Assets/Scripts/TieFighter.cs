@@ -65,8 +65,9 @@ public class TieFighter : MonoBehaviour {
 
     private void BlowUp(Vector3 pos)
     {
-        GameObject exposionParticles = Instantiate(explosion, pos, Quaternion.identity, transform);
+        GameObject exposionParticles = Instantiate(explosion, pos, Quaternion.identity);
         Destroy(exposionParticles, explosionDuration);
+        DestroyObject(gameObject);
     }
 
     private void Hit(Vector3 pos)

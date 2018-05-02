@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [DisallowMultipleComponent]
-public class EnemyFireManager : MonoBehaviour {
+public class EnemyFireManager : MonoBehaviour
+{
 
     [SerializeField]
     private Transform targetTransform;
@@ -13,7 +14,7 @@ public class EnemyFireManager : MonoBehaviour {
     private LaserGun[] laserGuns;
 
     [SerializeField]
-    private float laserDistance =  200f;
+    private float laserDistance = 200f;
 
     private Transform thisTransform;
 
@@ -24,6 +25,11 @@ public class EnemyFireManager : MonoBehaviour {
 
     private void Update()
     {
+
+        if (GameObject.FindGameObjectWithTag("Player") == null)
+        {
+            return;
+        }
 
         if (!FoundTarget())
         {
@@ -55,7 +61,7 @@ public class EnemyFireManager : MonoBehaviour {
             Debug.Log("IsInFront()");
             return true;
         }
- 
+
         return false;
     }
 
@@ -63,12 +69,12 @@ public class EnemyFireManager : MonoBehaviour {
     {
         RaycastHit hit;
         Vector3 direction = targetTransform.position - thisTransform.position;
-       
 
-        if(Physics.Raycast(thisTransform.position, direction, out hit, laserDistance))
+
+        if (Physics.Raycast(thisTransform.position, direction, out hit, laserDistance))
         {
             Debug.DrawRay(thisTransform.position, hit.point, Color.red);
-            Debug.Log("Hit tag: "+ hit.transform.tag);
+            Debug.Log("Hit tag: " + hit.transform.tag);
             if (hit.transform.CompareTag("Player"))
             {
                 return true;
@@ -83,9 +89,10 @@ public class EnemyFireManager : MonoBehaviour {
         if (targetTransform == null)
         {
             targetTransform = GameObject.FindGameObjectWithTag("Player").transform;
+
             Debug.Log("Found target", targetTransform);
             return false;
-           
+
         }
         else
         {
