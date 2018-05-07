@@ -1,11 +1,11 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 [DisallowMultipleComponent]
 public class EnemyMovement : MonoBehaviour
 {
 
-    [SerializeField]
-    private Transform target;
+    private TargetFinder targetFinder;
 
     [SerializeField]
     private float rotationalDamp = 0.5f;
@@ -30,21 +30,31 @@ public class EnemyMovement : MonoBehaviour
     private void Awake()
     {
         shipTransform = transform;
+        targetFinder = gameObject.GetComponent<TargetFinder>();
     }
 
     private void Update()
     {
-        if (!FoundTarget())
+        if (!targetFinder.FoundTarget())
         {
             return;
         }
+        ActivateThrusters();
         PathFinding();
         Move();
     }
 
+    private void ActivateThrusters()
+    {
+        foreach (Thruster truster in thrusters)
+        {
+            truster.Activate();
+        }
+    }
+
     private void Turn()
     {
-        Vector3 position = target.position - shipTransform.position;
+        Vector3 position = targetFinder.TargetTransform.position - shipTransform.position;
         Quaternion rotation = Quaternion.LookRotation(position);
         shipTransform.rotation = Quaternion.Slerp(shipTransform.rotation, rotation, rotationalDamp * Time.deltaTime);
     }
@@ -98,29 +108,6 @@ public class EnemyMovement : MonoBehaviour
         else
         {
             Turn();
-        }
-    }
-
-    bool FoundTarget()
-    {
-        if (target == null)
-        {
-            GameObject player = GameObject.FindGameObjectWithTag("Player");
-
-            if (player != null)
-            {
-                target = player.transform;
-            }
-
-            foreach (Thruster truster in thrusters)
-            {
-                truster.Activate();
-            }
-            return false;
-        }
-        else
-        {
-            return true;
         }
     }
 }

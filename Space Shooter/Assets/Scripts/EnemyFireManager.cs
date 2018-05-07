@@ -7,8 +7,7 @@ using UnityEngine;
 public class EnemyFireManager : MonoBehaviour
 {
 
-    [SerializeField]
-    private Transform targetTransform;
+    private TargetFinder targetFinder;
 
     [SerializeField]
     private LaserGun[] laserGuns;
@@ -21,17 +20,18 @@ public class EnemyFireManager : MonoBehaviour
     private void Awake()
     {
         thisTransform = transform;
+        targetFinder = GameObject.FindObjectOfType<TargetFinder>();
     }
 
     private void Update()
     {
 
-        if (GameObject.FindGameObjectWithTag("Player") == null)
+        if (targetFinder.TargetTransform == null)
         {
             return;
         }
 
-        if (!FoundTarget())
+        if (!targetFinder.FoundTarget())
         {
             return;
         }
@@ -52,12 +52,12 @@ public class EnemyFireManager : MonoBehaviour
 
     bool IsInFront()
     {
-        Vector3 directionToTarget = thisTransform.position - targetTransform.position;
+        Vector3 directionToTarget = thisTransform.position - targetFinder.TargetTransform.position;
         float angle = Vector3.Angle(thisTransform.position, directionToTarget);
 
         if (Mathf.Abs(angle) > 90 && Mathf.Abs(angle) < 270)
         {
-            Debug.DrawLine(thisTransform.position, targetTransform.position, Color.yellow);
+            Debug.DrawLine(thisTransform.position, targetFinder.TargetTransform.position, Color.yellow);
             Debug.Log("IsInFront()");
             return true;
         }
@@ -68,7 +68,7 @@ public class EnemyFireManager : MonoBehaviour
     bool HasLineOfSight()
     {
         RaycastHit hit;
-        Vector3 direction = targetTransform.position - thisTransform.position;
+        Vector3 direction = targetFinder.TargetTransform.position - thisTransform.position;
 
 
         if (Physics.Raycast(thisTransform.position, direction, out hit, laserDistance))
@@ -82,21 +82,5 @@ public class EnemyFireManager : MonoBehaviour
         }
 
         return false;
-    }
-
-    bool FoundTarget()
-    {
-        if (targetTransform == null)
-        {
-            targetTransform = GameObject.FindGameObjectWithTag("Player").transform;
-
-            Debug.Log("Found target", targetTransform);
-            return false;
-
-        }
-        else
-        {
-            return true;
-        }
     }
 }

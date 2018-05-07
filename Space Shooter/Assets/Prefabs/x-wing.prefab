@@ -145,6 +145,7 @@ GameObject:
   - component: {fileID: 65255835648516846}
   - component: {fileID: 65370243683451028}
   - component: {fileID: 114582424916475682}
+  - component: {fileID: 114612776806707580}
   m_Layer: 0
   m_Name: x-wing
   m_TagString: X-Wing
@@ -3211,6 +3212,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 1980770782751402, guid: 22c469dbe9fb0fa43a8259fbbfe0c174, type: 2}
   explosionDuration: 2
+--- !u!114 &114612776806707580
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1194101218812302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 013cf1e7bbb8fe34d99b20847058cda7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetTransform: {fileID: 0}
 --- !u!114 &114616299674894404
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3222,7 +3235,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1335362ab2fa52e47ab5ab2a9d2ddc1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetTransform: {fileID: 0}
   laserGuns:
   - {fileID: 114232342117491764}
   - {fileID: 114446495622358772}
@@ -3251,7 +3263,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4b467932e46a5f43aebbcb6d0cbe9d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
   rotationalDamp: 2
   movementSpeed: 10
   thrusters:
