@@ -35,6 +35,36 @@ ModelImporter:
     100054: node_id33 8
     100056: node_id33 9
     100058: //RootNode
+    100060: node_id10
+    100062: node_id11
+    100064: node_id12
+    100066: node_id13
+    100068: node_id14
+    100070: node_id15
+    100072: node_id16
+    100074: node_id17
+    100076: node_id18
+    100078: node_id19
+    100080: node_id20
+    100082: node_id21
+    100084: node_id22
+    100086: node_id23
+    100088: node_id24
+    100090: node_id25
+    100092: node_id26
+    100094: node_id27
+    100096: node_id28
+    100098: node_id29
+    100100: node_id30
+    100102: node_id31
+    100104: node_id32
+    100106: node_id34
+    100108: node_id5
+    100110: node_id6
+    100112: node_id64
+    100114: node_id7
+    100116: node_id8
+    100118: node_id9
     400000: node_id33
     400002: node_id33 1
     400004: node_id33 10
@@ -65,6 +95,36 @@ ModelImporter:
     400054: node_id33 8
     400056: node_id33 9
     400058: //RootNode
+    400060: node_id10
+    400062: node_id11
+    400064: node_id12
+    400066: node_id13
+    400068: node_id14
+    400070: node_id15
+    400072: node_id16
+    400074: node_id17
+    400076: node_id18
+    400078: node_id19
+    400080: node_id20
+    400082: node_id21
+    400084: node_id22
+    400086: node_id23
+    400088: node_id24
+    400090: node_id25
+    400092: node_id26
+    400094: node_id27
+    400096: node_id28
+    400098: node_id29
+    400100: node_id30
+    400102: node_id31
+    400104: node_id32
+    400106: node_id34
+    400108: node_id5
+    400110: node_id6
+    400112: node_id64
+    400114: node_id7
+    400116: node_id8
+    400118: node_id9
     2300000: node_id33
     2300002: node_id33 1
     2300004: node_id33 10
@@ -94,6 +154,34 @@ ModelImporter:
     2300052: node_id33 7
     2300054: node_id33 8
     2300056: node_id33 9
+    2300058: node_id10
+    2300060: node_id11
+    2300062: node_id12
+    2300064: node_id13
+    2300066: node_id14
+    2300068: node_id15
+    2300070: node_id16
+    2300072: node_id17
+    2300074: node_id18
+    2300076: node_id19
+    2300078: node_id20
+    2300080: node_id21
+    2300082: node_id22
+    2300084: node_id23
+    2300086: node_id24
+    2300088: node_id25
+    2300090: node_id26
+    2300092: node_id27
+    2300094: node_id28
+    2300096: node_id29
+    2300098: node_id30
+    2300100: node_id31
+    2300102: node_id32
+    2300104: node_id34
+    2300106: node_id5
+    2300108: node_id7
+    2300110: node_id8
+    2300112: node_id9
     3300000: node_id33
     3300002: node_id33 1
     3300004: node_id33 10
@@ -123,6 +211,34 @@ ModelImporter:
     3300052: node_id33 7
     3300054: node_id33 8
     3300056: node_id33 9
+    3300058: node_id10
+    3300060: node_id11
+    3300062: node_id12
+    3300064: node_id13
+    3300066: node_id14
+    3300068: node_id15
+    3300070: node_id16
+    3300072: node_id17
+    3300074: node_id18
+    3300076: node_id19
+    3300078: node_id20
+    3300080: node_id21
+    3300082: node_id22
+    3300084: node_id23
+    3300086: node_id24
+    3300088: node_id25
+    3300090: node_id26
+    3300092: node_id27
+    3300094: node_id28
+    3300096: node_id29
+    3300098: node_id30
+    3300100: node_id31
+    3300102: node_id32
+    3300104: node_id34
+    3300106: node_id5
+    3300108: node_id7
+    3300110: node_id8
+    3300112: node_id9
     4300000: node_id33
     4300002: node_id33
     4300004: node_id33
@@ -152,6 +268,34 @@ ModelImporter:
     4300052: node_id33
     4300054: node_id33
     4300056: node_id33
+    4300058: node_id5
+    4300060: node_id7
+    4300062: node_id8
+    4300064: node_id9
+    4300066: node_id10
+    4300068: node_id11
+    4300070: node_id12
+    4300072: node_id13
+    4300074: node_id14
+    4300076: node_id15
+    4300078: node_id16
+    4300080: node_id17
+    4300082: node_id18
+    4300084: node_id19
+    4300086: node_id20
+    4300088: node_id21
+    4300090: node_id22
+    4300092: node_id23
+    4300094: node_id24
+    4300096: node_id25
+    4300098: node_id26
+    4300100: node_id27
+    4300102: node_id28
+    4300104: node_id29
+    4300106: node_id30
+    4300108: node_id31
+    4300110: node_id32
+    4300112: node_id34
   materials:
     importMaterials: 1
     materialName: 0
