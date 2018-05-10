@@ -37,6 +37,10 @@ ModelImporter:
     100058: node_id8
     100060: node_id9
     100062: //RootNode
+    100064: node_id31_001
+    100066: node_id31_002
+    100068: node_id33_001
+    100070: node_id33_002
     400000: node_id10
     400002: node_id11
     400004: node_id12
@@ -69,6 +73,10 @@ ModelImporter:
     400058: node_id8
     400060: node_id9
     400062: //RootNode
+    400064: node_id31_001
+    400066: node_id31_002
+    400068: node_id33_001
+    400070: node_id33_002
     2300000: node_id10
     2300002: node_id11
     2300004: node_id12
@@ -98,6 +106,10 @@ ModelImporter:
     2300052: node_id7
     2300054: node_id8
     2300056: node_id9
+    2300058: node_id31_001
+    2300060: node_id31_002
+    2300062: node_id33_001
+    2300064: node_id33_002
     3300000: node_id10
     3300002: node_id11
     3300004: node_id12
@@ -127,6 +139,10 @@ ModelImporter:
     3300052: node_id7
     3300054: node_id8
     3300056: node_id9
+    3300058: node_id31_001
+    3300060: node_id31_002
+    3300062: node_id33_001
+    3300064: node_id33_002
     4300000: node_id5
     4300002: node_id34
     4300004: node_id33
@@ -156,6 +172,10 @@ ModelImporter:
     4300052: node_id9
     4300054: node_id8
     4300056: node_id7
+    4300058: node_id31_002
+    4300060: node_id31_001
+    4300062: node_id33_002
+    4300064: node_id33_001
     7400000: Default Take
     9500000: //RootNode
   materials:
