@@ -46,6 +46,7 @@ public class EnemyFireManager : MonoBehaviour
     {
         foreach (LaserGun gun in laserGuns)
         {
+            Debug.Log("Fire");
             gun.Fire();
         }
     }

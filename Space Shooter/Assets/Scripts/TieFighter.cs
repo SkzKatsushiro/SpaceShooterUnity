@@ -30,7 +30,6 @@ public class TieFighter : MonoBehaviour {
 
     private void Regenerate()
     {
-        Debug.Log("Regenerating");
         currentHealth += regenarationAmount;
         if (currentHealth >= maxHealth)
         {

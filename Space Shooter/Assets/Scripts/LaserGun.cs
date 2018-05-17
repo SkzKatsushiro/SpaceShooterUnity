@@ -27,7 +27,9 @@ public class LaserGun : MonoBehaviour {
 
     public void Fire()
     {
+        Debug.Log("EndFire" + canFire);
         if (canFire) {
+            Debug.Log("EndFire");
             BeginFire();
             Invoke("EndFire", lightTimeOffTime);
             canFire = false;
@@ -39,6 +41,7 @@ public class LaserGun : MonoBehaviour {
         lasergunLight.enabled = true;
         Quaternion roatation = laserGunTranform.rotation;
         Instantiate(laserbeam, laserGunTranform.position, roatation);
+        Debug.Log(laserbeam);
     }
 
     private void EndFire()
