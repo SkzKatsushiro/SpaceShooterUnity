@@ -1,13 +1,9 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
 [DisallowMultipleComponent]
-public class TieFighter : MonoBehaviour {
-
-    [SerializeField]
-    private GameObject explosion;
-
-    [SerializeField]
-    private float explosionDuration;
+public class Health : MonoBehaviour {
 
     [SerializeField]
     private int maxHealth;
@@ -54,7 +50,7 @@ public class TieFighter : MonoBehaviour {
             currentHealth = 0;
         }
 
-        EventManager.TakeDamage(currentHealth / (float) maxHealth);
+        EventManager.TakeDamage(currentHealth / (float)maxHealth);
 
         if (currentHealth <= 0)
         {
@@ -64,8 +60,7 @@ public class TieFighter : MonoBehaviour {
 
     private void BlowUp(Vector3 pos)
     {
-        GameObject exposionParticles = Instantiate(explosion, pos, Quaternion.identity);
-        Destroy(exposionParticles, explosionDuration);
+        EventManager.BlowUp(pos);
         DestroyObject(gameObject);
     }
 

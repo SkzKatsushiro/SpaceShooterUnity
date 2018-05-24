@@ -209,9 +209,10 @@ GameObject:
   - component: {fileID: 114940491551471860}
   - component: {fileID: 114616299674894404}
   - component: {fileID: 54909214097379496}
-  - component: {fileID: 114582424916475682}
   - component: {fileID: 114612776806707580}
   - component: {fileID: 95438255247761226}
+  - component: {fileID: 114274884222450880}
+  - component: {fileID: 114376916022519846}
   m_Layer: 0
   m_Name: x-wing
   m_TagString: X-Wing
@@ -3552,6 +3553,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trRenderer: {fileID: 96647036590912562}
   thrusterLight: {fileID: 108199715316742278}
+--- !u!114 &114274884222450880
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1194101218812302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 739569b5aecf9cd4ea9ceb659a0e0fb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 5
+  regenerationRate: 5
+  regenarationAmount: 1
+  currentHealth: 5
+--- !u!114 &114376916022519846
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1194101218812302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88ab0f3455ae12b4b8791957a5a1f671, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosion: {fileID: 1980770782751402, guid: 22c469dbe9fb0fa43a8259fbbfe0c174, type: 2}
+  explosionDuration: 2
 --- !u!114 &114446495622358772
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3582,19 +3611,6 @@ MonoBehaviour:
   lightTimeOffTime: 0.3
   laserbeam: {fileID: 114756161318988618, guid: 97de6fafeac412749acd966195195515,
     type: 2}
---- !u!114 &114582424916475682
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1194101218812302}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7e2926097551e234599bd24b30999d7d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  explosion: {fileID: 1980770782751402, guid: 22c469dbe9fb0fa43a8259fbbfe0c174, type: 2}
-  explosionDuration: 2
 --- !u!114 &114612776806707580
 MonoBehaviour:
   m_ObjectHideFlags: 1

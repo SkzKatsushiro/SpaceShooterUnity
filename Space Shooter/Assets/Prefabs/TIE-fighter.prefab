@@ -763,7 +763,8 @@ GameObject:
   - component: {fileID: 65543659142509466}
   - component: {fileID: 65830432277098506}
   - component: {fileID: 135527560300518330}
-  - component: {fileID: 114631088365860896}
+  - component: {fileID: 95904833165199554}
+  - component: {fileID: 114725549720809564}
   m_Layer: 0
   m_Name: TIE-fighter
   m_TagString: Player
@@ -1803,7 +1804,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1326668903052466}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4, y: -11.400002, z: 15.060002}
+  m_LocalPosition: {x: 4, y: -11.400002, z: 15.710171}
   m_LocalScale: {x: 125, y: 125, z: 125}
   m_Children: []
   m_Father: {fileID: 4780082666263106}
@@ -2190,7 +2191,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1975882456197804}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.4, y: -11.4, z: 15.06}
+  m_LocalPosition: {x: -4.4, y: -11.4, z: 15.71}
   m_LocalScale: {x: 125, y: 125, z: 125}
   m_Children: []
   m_Father: {fileID: 4780082666263106}
@@ -4770,7 +4771,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!65 &65543659142509466
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -4807,6 +4808,23 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 87.16443, y: 17.642876, z: 15.320706}
   m_Center: {x: 0.21938978, y: -0.169822, z: -1.1093597}
+--- !u!95 &95904833165199554
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1461880576410924}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!96 &96939244197581948
 TrailRenderer:
   serializedVersion: 2
@@ -5162,23 +5180,6 @@ MonoBehaviour:
   laserGuns:
   - {fileID: 114047731891529714}
   - {fileID: 114862084146454424}
---- !u!114 &114631088365860896
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1461880576410924}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2fc2b16e12227e1408fcffa9ec3f61ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  explosion: {fileID: 1980770782751402, guid: 22c469dbe9fb0fa43a8259fbbfe0c174, type: 2}
-  explosionDuration: 2
-  maxHealth: 10
-  regenerationRate: 2
-  regenarationAmount: 1
-  currentHealth: 10
 --- !u!114 &114699822231080934
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5190,6 +5191,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e8a8900f3b313e45b1712a1bbd7215a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  trRenderer: {fileID: 0}
+  thrusterLight: {fileID: 0}
+--- !u!114 &114725549720809564
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1461880576410924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 739569b5aecf9cd4ea9ceb659a0e0fb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 10
+  regenerationRate: 2
+  regenarationAmount: 1
+  currentHealth: 10
 --- !u!114 &114826533024568938
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5201,6 +5219,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e8a8900f3b313e45b1712a1bbd7215a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  trRenderer: {fileID: 0}
+  thrusterLight: {fileID: 0}
 --- !u!114 &114845632326663474
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5242,5 +5262,5 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 16.621523
-  m_Center: {x: 0, y: -0.11942349, z: 0}
+  m_Radius: 14.451743
+  m_Center: {x: 0.0000009313225, y: -0.11942349, z: -0.4668217}
