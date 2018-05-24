@@ -7,7 +7,10 @@ using UnityEngine;
 [RequireComponent(typeof(TrailRenderer))]
 public class Thruster : MonoBehaviour {
 
+    [SerializeField]
     TrailRenderer trRenderer;
+
+    [SerializeField]
     Light thrusterLight;
 
     void Awake()

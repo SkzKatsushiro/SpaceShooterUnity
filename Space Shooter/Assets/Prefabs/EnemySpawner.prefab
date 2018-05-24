@@ -51,5 +51,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b107e1dc10f7cc46a5edb66f73adaf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPerfab: {fileID: 0}
+  enemyPerfab: {fileID: 1194101218812302, guid: cd4abf0a9676bbb4fb8e2d7c4c0e5dde,
+    type: 2}
   spawnTimer: 5

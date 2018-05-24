@@ -28,6 +28,7 @@ public class EnemySpawner : MonoBehaviour
 
     void StartSpawning()
     {
+        Debug.Log("Swanning");
         InvokeRepeating("SpawnEnemy", spawnTimer, spawnTimer);
     }
 

@@ -47,7 +47,7 @@ Light:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1943351042782504}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 8
   m_Type: 2
   m_Color: {r: 0, g: 1, b: 0.006896496, a: 1}
@@ -88,5 +88,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9c86840acbd72b4ea1a58cb001704ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fireDelay: 0
+  lightTimeOffTime: 0
   laserbeam: {fileID: 114756161318988618, guid: 97de6fafeac412749acd966195195515,
     type: 2}
