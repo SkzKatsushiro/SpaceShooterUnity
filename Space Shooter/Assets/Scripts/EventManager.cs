@@ -5,12 +5,15 @@ public class EventManager : MonoBehaviour
 
     public delegate void StartGameDelegate();
     public static StartGameDelegate onStartGame;
+    public static StartGameDelegate onPlayerDeath;
 
     public delegate void TakeDamageDelegate(float amount);
     public static TakeDamageDelegate onTakeDamage;
 
     public delegate void BlowUpDelegate(Vector3 pos);
     public static BlowUpDelegate onBlowUp;
+
+   
 
     public static void StartGame()
     {
@@ -33,6 +36,14 @@ public class EventManager : MonoBehaviour
         if(onBlowUp != null)
         {
             onBlowUp(pos);
+        }
+    }
+
+    public static void PlayerDeath()
+    {
+        if(onPlayerDeath != null)
+        {
+            onPlayerDeath();
         }
     }
 }

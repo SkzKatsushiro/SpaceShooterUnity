@@ -60,8 +60,14 @@ public class Health : MonoBehaviour {
 
     private void BlowUp(Vector3 pos)
     {
-        EventManager.BlowUp(pos);
         DestroyObject(gameObject);
+        EventManager.BlowUp(pos);
+
+        if (gameObject.tag == "Player")
+        {
+            Debug.Log("BlowUp Player");
+            EventManager.PlayerDeath();
+        }
     }
 
     private void Hit(Vector3 pos)
