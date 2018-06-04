@@ -23,17 +23,18 @@ public class TargetFinder : MonoBehaviour {
 
     public bool FoundTarget()
     {
-        GameObject target = GameObject.FindGameObjectWithTag("Player");
+        if (targetTransform == null)
+        {
+            GameObject target = GameObject.FindGameObjectWithTag("Player");
 
-        if (target == null)
-        {
-            return false;
+            if (target == null)
+            {
+                return false;
+            }
+
+            targetTransform = target.transform;
         }
-        else
-        {
-            targetTransform = GameObject.FindGameObjectWithTag("Player").transform;
-            return true;
-        }
+        return true;
     }
 
     private void FindMainCamera()
