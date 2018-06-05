@@ -20,6 +20,9 @@ public class Movement : MonoBehaviour {
 
     Transform playerTransform;
 
+    private float mousePosX = 0;
+    private float mousePosY = 0;
+
     void Awake()
     {
         playerTransform = transform;
@@ -33,11 +36,13 @@ public class Movement : MonoBehaviour {
 
     private void Turn()
     {
-        float yaw =  turnSpeed * Time.deltaTime * Input.GetAxis(HORIZONTAL);
-        float pitch = turnSpeed * Time.deltaTime * Input.GetAxis(PITCH);
-        float roll = turnSpeed * Time.deltaTime * Input.GetAxis(ROLL);
+        mousePosX = Input.GetAxis("Mouse X") + mousePosX;
+        mousePosY = Input.GetAxis("Mouse Y") + mousePosY;
 
-        playerTransform.Rotate(pitch, yaw, -roll);
+        float x = Input.GetAxis("Mouse X");
+        float y = Input.GetAxis("Mouse Y");
+
+        transform.Rotate(mousePosX, 0f, mousePosY);
     }
 
     private void Thrust()
