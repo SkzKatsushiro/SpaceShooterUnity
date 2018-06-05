@@ -5,6 +5,9 @@ public class TargetFinder : MonoBehaviour {
     [SerializeField]
     private Transform targetTransform;
 
+    [SerializeField]
+    private bool shouldLookForOtherTarges = true;
+
     public Transform TargetTransform
     { 
         get{return targetTransform;}
@@ -23,6 +26,8 @@ public class TargetFinder : MonoBehaviour {
 
     public bool FoundTarget()
     {
+ 
+
         if (targetTransform == null)
         {
             GameObject target = GameObject.FindGameObjectWithTag("Player");
@@ -39,6 +44,11 @@ public class TargetFinder : MonoBehaviour {
 
     private void FindMainCamera()
     {
+        if (!shouldLookForOtherTarges)
+        {
+            return;
+        }
+
         Debug.Log("In find  target");
         GameObject tmp = GameObject.FindGameObjectWithTag("MainCamera");
         Debug.Log(tmp);

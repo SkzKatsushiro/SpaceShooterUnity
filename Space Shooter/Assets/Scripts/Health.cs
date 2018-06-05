@@ -26,6 +26,11 @@ public class Health : MonoBehaviour {
 
     private void Regenerate()
     {
+        if (currentHealth <= 0)
+        {
+            return;
+        }
+
         currentHealth += regenarationAmount;
         if (currentHealth >= maxHealth)
         {
