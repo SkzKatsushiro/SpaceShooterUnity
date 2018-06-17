@@ -118,7 +118,6 @@ GameObject:
   - component: {fileID: 87880077}
   - component: {fileID: 87880080}
   - component: {fileID: 87880079}
-  - component: {fileID: 87880078}
   - component: {fileID: 87880081}
   m_Layer: 5
   m_Name: GameUI
@@ -149,20 +148,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &87880078
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 87880076}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e375c47f4b8ae2f4b97f6099a523f3ed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PlayButton: {fileID: 1814316010}
-  gameUI: {fileID: 0}
-  mainMenu: {fileID: 0}
 --- !u!114 &87880079
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -437,6 +422,7 @@ GameObject:
   - component: {fileID: 323829794}
   - component: {fileID: 323829796}
   - component: {fileID: 323829795}
+  - component: {fileID: 323829797}
   m_Layer: 5
   m_Name: Main Menu
   m_TagString: Untagged
@@ -497,6 +483,17 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 323829793}
+--- !u!114 &323829797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 323829793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93a06bc4d10015641bbee25bd0825c5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &345471365
 GameObject:
   m_ObjectHideFlags: 0
@@ -1008,6 +1005,8 @@ GameObject:
   - component: {fileID: 1157049136}
   - component: {fileID: 1157049135}
   - component: {fileID: 1157049134}
+  - component: {fileID: 1157049139}
+  - component: {fileID: 1157049138}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1092,6 +1091,31 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1157049138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1157049133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e375c47f4b8ae2f4b97f6099a523f3ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameUI: {fileID: 87880076}
+  mainMenu: {fileID: 323829793}
+--- !u!114 &1157049139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1157049133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6774898da75cd3a43a49af422cf0d5ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  barRectTransform: {fileID: 0}
 --- !u!1 &1169126881
 GameObject:
   m_ObjectHideFlags: 0
@@ -1518,6 +1542,7 @@ GameObject:
   - component: {fileID: 1814316014}
   - component: {fileID: 1814316013}
   - component: {fileID: 1814316012}
+  - component: {fileID: 1814316015}
   m_Layer: 5
   m_Name: PlayButton
   m_TagString: Untagged
@@ -1583,7 +1608,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 87880078}
+      - m_Target: {fileID: 323829797}
         m_MethodName: PlayGame
         m_Mode: 1
         m_Arguments:
@@ -1629,3 +1654,14 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1814316010}
+--- !u!114 &1814316015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1814316010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93a06bc4d10015641bbee25bd0825c5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

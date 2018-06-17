@@ -10,25 +10,30 @@ public class GameUI : MonoBehaviour {
     [SerializeField]
     GameObject mainMenu;
 
+    private void Start()
+    {
+        ShowMainMenu();
+    }
+
     private void OnEnable()
     {
-        EventManager.onStartGame += ShowgGameUI;
-        EventManager.onPlayerDeath += PlayerDeath;
+        EventManager.onStartGame += ShowGameUI;
+        EventManager.onPlayerDeath += ShowMainMenu;
     }
 
     private void OnDisable()
     {
-        EventManager.onStartGame -= ShowgGameUI;
-        EventManager.onPlayerDeath -= PlayerDeath;
+        EventManager.onStartGame -= ShowGameUI;
+        EventManager.onPlayerDeath -= ShowMainMenu;
     }
 
-    void PlayerDeath()
+    void ShowMainMenu()
     {
         mainMenu.SetActive(true);
         gameUI.SetActive(false);
     }
 
-    void ShowgGameUI()
+    void ShowGameUI()
     {
         mainMenu.SetActive(false);
         gameUI.SetActive(true);
