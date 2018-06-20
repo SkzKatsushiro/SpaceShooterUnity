@@ -18,7 +18,25 @@ public class Movement : MonoBehaviour {
     [SerializeField]
     private float turnSpeed = 60;
 
-    Transform playerTransform;
+    [SerializeField]
+    public float cameraSensitivity = 90;
+
+    private Transform playerTransform;
+
+    private float rotationX = 0.0f;
+    private float rotationY = 0.0f;
+
+    private bool canMove = false;
+
+    private void OnEnable()
+    {
+        EventManager.onStartGame += LockCursor;
+    }
+
+    private void OnDisable()
+    {
+        EventManager.onStartGame -= LockCursor;
+    }
 
     void Awake()
     {
@@ -27,17 +45,22 @@ public class Movement : MonoBehaviour {
 
     void Update()
     {
-        Turn();
-        Thrust();
+        if (!canMove)
+        {
+            return;
+        }
+            Turn();
+            Thrust();
     }
 
     private void Turn()
     {
-        float yaw =  turnSpeed * Time.deltaTime * Input.GetAxis(HORIZONTAL);
-        float pitch = turnSpeed * Time.deltaTime * Input.GetAxis(PITCH);
-        float roll = turnSpeed * Time.deltaTime * Input.GetAxis(ROLL);
+        rotationX += Input.GetAxis("Mouse X") * cameraSensitivity * Time.deltaTime;
+        rotationY += Input.GetAxis("Mouse Y") * cameraSensitivity * Time.deltaTime;
+        rotationY = Mathf.Clamp(rotationY, -90, 90);
 
-        playerTransform.Rotate(pitch, yaw, -roll);
+        playerTransform.localRotation = Quaternion.AngleAxis(rotationX, Vector3.up);
+        playerTransform.localRotation *= Quaternion.AngleAxis(rotationY, Vector3.left);
     }
 
     private void Thrust()
@@ -60,5 +83,11 @@ public class Movement : MonoBehaviour {
                 truster.Activate(false);
             }
         }
+    }
+
+    void LockCursor()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        canMove = true;
     }
 }
