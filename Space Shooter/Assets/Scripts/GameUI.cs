@@ -5,26 +5,37 @@ public class GameUI : MonoBehaviour {
     bool isDisplayed = true;
 
     [SerializeField]
-    GameObject PlayButton;
+    GameObject gameUI;
+
+    [SerializeField]
+    GameObject mainMenu;
+
+    private void Start()
+    {
+        ShowMainMenu();
+    }
 
     private void OnEnable()
     {
-        EventManager.onStartGame += HidePanel;
+        EventManager.onStartGame += ShowGameUI;
+        EventManager.onPlayerDeath += ShowMainMenu;
     }
 
     private void OnDisable()
     {
-        EventManager.onStartGame -= HidePanel;
+        EventManager.onStartGame -= ShowGameUI;
+        EventManager.onPlayerDeath -= ShowMainMenu;
     }
 
-    void HidePanel()
+    void ShowMainMenu()
     {
-        isDisplayed = !isDisplayed;
-        PlayButton.SetActive(isDisplayed);
-    }    
+        mainMenu.SetActive(true);
+        gameUI.SetActive(false);
+    }
 
-    public void PlayGame()
+    void ShowGameUI()
     {
-        EventManager.StartGame();
+        mainMenu.SetActive(false);
+        gameUI.SetActive(true);
     }
 }

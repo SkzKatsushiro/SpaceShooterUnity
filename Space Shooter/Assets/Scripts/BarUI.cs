@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class ShieldUI : MonoBehaviour {
+public class BarUI : MonoBehaviour {
 
     [SerializeField]
     RectTransform barRectTransform;
@@ -14,12 +14,13 @@ public class ShieldUI : MonoBehaviour {
 
     private void OnEnable()
     {
-        EventManager.onTakeDamage += UpdateShieldDisplay;
+        EventManager.onUpdateShiledUI += UpdateShieldDisplay;
+       
     }
 
     private void OnDestroy()
     {
-        EventManager.onTakeDamage -= UpdateShieldDisplay;
+        EventManager.onUpdateShiledUI -= UpdateShieldDisplay;
     }
 
     private void UpdateShieldDisplay(float percentage)

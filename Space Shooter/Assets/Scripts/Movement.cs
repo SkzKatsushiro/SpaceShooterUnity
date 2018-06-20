@@ -41,12 +41,14 @@ public class Movement : MonoBehaviour {
     void Awake()
     {
         playerTransform = transform;
+        LockCursor();
     }
 
     void Update()
     {
         if (!canMove)
         {
+            Debug.Log("In return");
             return;
         }
             Turn();
@@ -87,6 +89,7 @@ public class Movement : MonoBehaviour {
 
     void LockCursor()
     {
+        Debug.Log("game started!!!");
         Cursor.lockState = CursorLockMode.Locked;
         canMove = true;
     }

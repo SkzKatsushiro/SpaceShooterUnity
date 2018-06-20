@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [DisallowMultipleComponent]
-public class Health : MonoBehaviour {
+public class Health : MonoBehaviour
+{
+    private new string tag;
 
     [SerializeField]
     private int maxHealth;
@@ -20,6 +22,7 @@ public class Health : MonoBehaviour {
     private void Start()
     {
         currentHealth = maxHealth;
+        tag = gameObject.tag;
 
         InvokeRepeating("Regenerate", regenerationRate, regenerationRate);
     }
@@ -37,7 +40,14 @@ public class Health : MonoBehaviour {
             currentHealth = maxHealth;
         }
 
-        EventManager.TakeDamage(currentHealth / (float)maxHealth);
+        float amount = currentHealth / (float)maxHealth;
+
+        EventManager.TakeDamage(amount);
+
+        if (tag.Equals("Player"))
+        {
+            EventManager.UpdateShiledUI(amount);
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -55,7 +65,13 @@ public class Health : MonoBehaviour {
             currentHealth = 0;
         }
 
-        EventManager.TakeDamage(currentHealth / (float)maxHealth);
+        float amount = currentHealth / (float)maxHealth;
+        EventManager.TakeDamage(amount);
+
+        if (tag.Equals("Player"))
+        {
+            EventManager.UpdateShiledUI(amount);
+        }
 
         if (currentHealth <= 0)
         {
@@ -65,6 +81,16 @@ public class Health : MonoBehaviour {
 
     private void BlowUp(Vector3 pos)
     {
+<<<<<<< HEAD
+=======
+
+        if (tag.Equals("Player"))
+        {
+            EventManager.PlayerDeath();
+        }
+
+        EventManager.BlowUp(pos);
+>>>>>>> Event-Driven-GUI-Layout
         DestroyObject(gameObject);
         EventManager.BlowUp(pos);
 
