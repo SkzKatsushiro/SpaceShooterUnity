@@ -27,7 +27,9 @@ public class LaserGun : MonoBehaviour {
 
     public void Fire()
     {
+        Debug.Log("EndFire" + canFire);
         if (canFire) {
+            Debug.Log("EndFire");
             BeginFire();
             Invoke("EndFire", lightTimeOffTime);
             canFire = false;
