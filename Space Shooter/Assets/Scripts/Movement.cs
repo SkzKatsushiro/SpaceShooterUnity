@@ -29,6 +29,7 @@ public class Movement : MonoBehaviour {
     void Update()
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         if (!canMove)
         {
             Debug.Log("In return");
@@ -36,6 +37,10 @@ public class Movement : MonoBehaviour {
         }
             Turn();
             Thrust();
+=======
+        Turn();
+        Thrust();
+>>>>>>> parent of 0f30cc6... Merge branch 'dev' into Change-target-functionality-
 =======
         Turn();
         Thrust();
@@ -73,6 +78,7 @@ public class Movement : MonoBehaviour {
         }
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     void LockCursor()
     {
@@ -80,6 +86,8 @@ public class Movement : MonoBehaviour {
         Cursor.lockState = CursorLockMode.Locked;
         canMove = true;
     }
+=======
+>>>>>>> parent of 0f30cc6... Merge branch 'dev' into Change-target-functionality-
 =======
 >>>>>>> parent of 0f30cc6... Merge branch 'dev' into Change-target-functionality-
 }

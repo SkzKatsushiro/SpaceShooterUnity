@@ -1404,6 +1404,7 @@ Prefab:
       value: 
       objectReference: {fileID: 9100000, guid: 9cd8cd54338fea142a84a5bf97a3cebe, type: 2}
 <<<<<<< HEAD
+<<<<<<< HEAD
     - target: {fileID: 114845632326663474, guid: 171016fe2fcb80547a00d43ac2b0badd,
 =======
     - target: {fileID: 4541484739261668, guid: 469ca1d7fd02aa34fa8550415b150453, type: 2}
@@ -1452,6 +1453,8 @@ Prefab:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+=======
+>>>>>>> parent of 0f30cc6... Merge branch 'dev' into Change-target-functionality-
 =======
 >>>>>>> parent of 0f30cc6... Merge branch 'dev' into Change-target-functionality-
     m_RemovedComponents: []
