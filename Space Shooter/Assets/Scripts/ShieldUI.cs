@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class BarUI : MonoBehaviour {
+public class ShieldUI : MonoBehaviour {
 
     [SerializeField]
     RectTransform barRectTransform;
@@ -15,7 +15,6 @@ public class BarUI : MonoBehaviour {
     private void OnEnable()
     {
         EventManager.onUpdateShiledUI += UpdateShieldDisplay;
-       
     }
 
     private void OnDestroy()

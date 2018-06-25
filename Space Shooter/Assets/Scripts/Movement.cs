@@ -51,7 +51,6 @@ public class Movement : MonoBehaviour {
     void Awake()
     {
         playerTransform = transform;
-        LockCursor();
     }
 
     void Update()
@@ -65,7 +64,6 @@ public class Movement : MonoBehaviour {
 >>>>>>> parent of 6449a3f... Revert "Fixed unlock cursor on death"
         if (!canMove)
         {
-            Debug.Log("In return");
             return;
         }
             Turn();
@@ -131,7 +129,6 @@ public class Movement : MonoBehaviour {
 
     void LockCursor()
     {
-        Debug.Log("game started!!!");
         Cursor.lockState = CursorLockMode.Locked;
         canMove = true;
     }
