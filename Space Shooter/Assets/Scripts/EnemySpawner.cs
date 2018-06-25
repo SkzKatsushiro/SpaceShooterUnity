@@ -8,12 +8,7 @@ public class EnemySpawner : MonoBehaviour
     GameObject enemyPerfab;
 
     [SerializeField]
-    private float spawnTimer = 5f;
-
-    [SerializeField]
-    private float maxSpawnTimes = 5f;
-
-    private float currentSpawnTimes = 0f;
+    float spawnTimer = 5f;
 
     private void OnEnable()
     {
@@ -33,12 +28,8 @@ public class EnemySpawner : MonoBehaviour
 
     void StartSpawning()
     {
-        if(currentSpawnTimes >= maxSpawnTimes)
-        {
-            return;
-        }
+        Debug.Log("Swanning");
         InvokeRepeating("SpawnEnemy", spawnTimer, spawnTimer);
-        currentSpawnTimes++;
     }
 
 
