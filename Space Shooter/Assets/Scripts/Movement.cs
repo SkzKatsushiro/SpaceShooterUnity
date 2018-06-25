@@ -31,13 +31,11 @@ public class Movement : MonoBehaviour {
     private void OnEnable()
     {
         EventManager.onStartGame += LockCursor;
-        EventManager.onPlayerDeath += UnlockCursor;
     }
 
     private void OnDisable()
     {
         EventManager.onStartGame -= LockCursor;
-        EventManager.onPlayerDeath -= UnlockCursor;
     }
 
     void Awake()
@@ -94,11 +92,5 @@ public class Movement : MonoBehaviour {
         Debug.Log("game started!!!");
         Cursor.lockState = CursorLockMode.Locked;
         canMove = true;
-    }
-
-    void UnlockCursor()
-    {
-        Cursor.lockState = CursorLockMode.None;
-        canMove = false;
     }
 }
