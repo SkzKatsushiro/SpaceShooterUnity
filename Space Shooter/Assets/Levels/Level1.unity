@@ -1406,6 +1406,7 @@ Prefab:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> parent of 6449a3f... Revert "Fixed unlock cursor on death"
     - target: {fileID: 114845632326663474, guid: 171016fe2fcb80547a00d43ac2b0badd,
@@ -1463,6 +1464,8 @@ Prefab:
 >>>>>>> parent of 0f30cc6... Merge branch 'dev' into Change-target-functionality-
 =======
 >>>>>>> parent of 6449a3f... Revert "Fixed unlock cursor on death"
+=======
+>>>>>>> parent of 0f30cc6... Merge branch 'dev' into Change-target-functionality-
     m_RemovedComponents: []
 <<<<<<< HEAD
   m_ParentPrefab: {fileID: 100100000, guid: 171016fe2fcb80547a00d43ac2b0badd, type: 2}

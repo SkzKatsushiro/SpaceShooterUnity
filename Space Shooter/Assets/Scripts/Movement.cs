@@ -18,6 +18,7 @@ public class Movement : MonoBehaviour {
     [SerializeField]
     private float turnSpeed = 60;
 
+<<<<<<< HEAD
     [SerializeField]
     public float cameraSensitivity = 90;
 
@@ -39,6 +40,9 @@ public class Movement : MonoBehaviour {
         EventManager.onStartGame -= LockCursor;
         EventManager.onPlayerDeath -= UnlockCursor;
     }
+=======
+    Transform playerTransform;
+>>>>>>> parent of 0f30cc6... Merge branch 'dev' into Change-target-functionality-
 
     void Awake()
     {
@@ -48,6 +52,7 @@ public class Movement : MonoBehaviour {
 
     void Update()
     {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -71,16 +76,19 @@ public class Movement : MonoBehaviour {
 >>>>>>> parent of 0f30cc6... Merge branch 'dev' into Change-target-functionality-
 =======
 >>>>>>> parent of 6449a3f... Revert "Fixed unlock cursor on death"
+=======
+        Turn();
+        Thrust();
+>>>>>>> parent of 0f30cc6... Merge branch 'dev' into Change-target-functionality-
     }
 
     private void Turn()
     {
-        rotationX += Input.GetAxis("Mouse X") * cameraSensitivity * Time.deltaTime;
-        rotationY += Input.GetAxis("Mouse Y") * cameraSensitivity * Time.deltaTime;
-        rotationY = Mathf.Clamp(rotationY, -90, 90);
+        float yaw =  turnSpeed * Time.deltaTime * Input.GetAxis(HORIZONTAL);
+        float pitch = turnSpeed * Time.deltaTime * Input.GetAxis(PITCH);
+        float roll = turnSpeed * Time.deltaTime * Input.GetAxis(ROLL);
 
-        playerTransform.localRotation = Quaternion.AngleAxis(rotationX, Vector3.up);
-        playerTransform.localRotation *= Quaternion.AngleAxis(rotationY, Vector3.left);
+        playerTransform.Rotate(pitch, yaw, -roll);
     }
 
     private void Thrust()
@@ -107,6 +115,7 @@ public class Movement : MonoBehaviour {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> parent of 6449a3f... Revert "Fixed unlock cursor on death"
 
@@ -129,4 +138,6 @@ public class Movement : MonoBehaviour {
         canMove = false;
     }
 >>>>>>> parent of 6449a3f... Revert "Fixed unlock cursor on death"
+=======
+>>>>>>> parent of 0f30cc6... Merge branch 'dev' into Change-target-functionality-
 }
