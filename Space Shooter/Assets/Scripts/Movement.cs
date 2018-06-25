@@ -18,10 +18,6 @@ public class Movement : MonoBehaviour {
     [SerializeField]
     private float turnSpeed = 60;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
     [SerializeField]
     public float cameraSensitivity = 90;
 
@@ -35,85 +31,38 @@ public class Movement : MonoBehaviour {
     private void OnEnable()
     {
         EventManager.onStartGame += LockCursor;
-        EventManager.onPlayerDeath += UnlockCursor;
     }
 
     private void OnDisable()
     {
         EventManager.onStartGame -= LockCursor;
-        EventManager.onPlayerDeath -= UnlockCursor;
     }
-=======
-    Transform playerTransform;
->>>>>>> parent of 0f30cc6... Merge branch 'dev' into Change-target-functionality-
-=======
-    Transform playerTransform;
->>>>>>> parent of 0f30cc6... Merge branch 'dev' into Change-target-functionality-
-=======
-    Transform playerTransform;
->>>>>>> parent of 0f30cc6... Merge branch 'dev' into Change-target-functionality-
-=======
-    Transform playerTransform;
->>>>>>> parent of 0f30cc6... Merge branch 'dev' into Change-target-functionality-
 
     void Awake()
     {
         playerTransform = transform;
+        LockCursor();
     }
 
     void Update()
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> parent of 6449a3f... Revert "Fixed unlock cursor on death"
         if (!canMove)
         {
+            Debug.Log("In return");
             return;
         }
             Turn();
             Thrust();
-<<<<<<< HEAD
-=======
-        Turn();
-        Thrust();
->>>>>>> parent of 0f30cc6... Merge branch 'dev' into Change-target-functionality-
-=======
-        Turn();
-        Thrust();
->>>>>>> parent of 0f30cc6... Merge branch 'dev' into Change-target-functionality-
-=======
->>>>>>> parent of 6449a3f... Revert "Fixed unlock cursor on death"
-=======
-        Turn();
-        Thrust();
->>>>>>> parent of 0f30cc6... Merge branch 'dev' into Change-target-functionality-
-=======
-        Turn();
-        Thrust();
->>>>>>> parent of 0f30cc6... Merge branch 'dev' into Change-target-functionality-
-=======
-        Turn();
-        Thrust();
->>>>>>> parent of 0f30cc6... Merge branch 'dev' into Change-target-functionality-
-=======
-        Turn();
-        Thrust();
->>>>>>> parent of 0f30cc6... Merge branch 'dev' into Change-target-functionality-
     }
 
     private void Turn()
     {
-        float yaw =  turnSpeed * Time.deltaTime * Input.GetAxis(HORIZONTAL);
-        float pitch = turnSpeed * Time.deltaTime * Input.GetAxis(PITCH);
-        float roll = turnSpeed * Time.deltaTime * Input.GetAxis(ROLL);
+        rotationX += Input.GetAxis("Mouse X") * cameraSensitivity * Time.deltaTime;
+        rotationY += Input.GetAxis("Mouse Y") * cameraSensitivity * Time.deltaTime;
+        rotationY = Mathf.Clamp(rotationY, -90, 90);
 
-        playerTransform.Rotate(pitch, yaw, -roll);
+        playerTransform.localRotation = Quaternion.AngleAxis(rotationX, Vector3.up);
+        playerTransform.localRotation *= Quaternion.AngleAxis(rotationY, Vector3.left);
     }
 
     private void Thrust()
@@ -137,40 +86,11 @@ public class Movement : MonoBehaviour {
             }
         }
     }
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> parent of 6449a3f... Revert "Fixed unlock cursor on death"
 
     void LockCursor()
     {
+        Debug.Log("game started!!!");
         Cursor.lockState = CursorLockMode.Locked;
         canMove = true;
     }
-<<<<<<< HEAD
-=======
->>>>>>> parent of 0f30cc6... Merge branch 'dev' into Change-target-functionality-
-=======
->>>>>>> parent of 0f30cc6... Merge branch 'dev' into Change-target-functionality-
-=======
-
-    void UnlockCursor()
-    {
-        Cursor.lockState = CursorLockMode.None;
-        canMove = false;
-    }
->>>>>>> parent of 6449a3f... Revert "Fixed unlock cursor on death"
-=======
->>>>>>> parent of 0f30cc6... Merge branch 'dev' into Change-target-functionality-
-=======
->>>>>>> parent of 0f30cc6... Merge branch 'dev' into Change-target-functionality-
-=======
->>>>>>> parent of 0f30cc6... Merge branch 'dev' into Change-target-functionality-
-=======
->>>>>>> parent of 0f30cc6... Merge branch 'dev' into Change-target-functionality-
 }

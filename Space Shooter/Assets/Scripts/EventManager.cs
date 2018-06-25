@@ -5,7 +5,6 @@ public class EventManager : MonoBehaviour
 
     public delegate void StartGameDelegate();
     public static StartGameDelegate onStartGame;
-    public static StartGameDelegate onPlayerDeath;
 
     public delegate void PlayerDeathDelegate();
     public static PlayerDeathDelegate onPlayerDeath;
@@ -18,8 +17,6 @@ public class EventManager : MonoBehaviour
 
     public delegate void BlowUpDelegate(Vector3 pos);
     public static BlowUpDelegate onBlowUp;
-
-   
 
     public static void StartGame()
     {
@@ -47,17 +44,11 @@ public class EventManager : MonoBehaviour
 
     public static void PlayerDeath()
     {
-<<<<<<< HEAD
-        if(onPlayerDeath != null)
-=======
         if (onPlayerDeath != null)
->>>>>>> Event-Driven-GUI-Layout
         {
             onPlayerDeath();
         }
     }
-<<<<<<< HEAD
-=======
 
     public static void UpdateShiledUI(float amount)
     {
@@ -66,5 +57,4 @@ public class EventManager : MonoBehaviour
             onUpdateShiledUI(amount);
         }
     }
->>>>>>> Event-Driven-GUI-Layout
 }
