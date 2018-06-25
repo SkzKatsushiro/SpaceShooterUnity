@@ -19,6 +19,7 @@ public class Movement : MonoBehaviour {
     private float turnSpeed = 60;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     [SerializeField]
     public float cameraSensitivity = 90;
 
@@ -43,6 +44,9 @@ public class Movement : MonoBehaviour {
 =======
     Transform playerTransform;
 >>>>>>> parent of 0f30cc6... Merge branch 'dev' into Change-target-functionality-
+=======
+    Transform playerTransform;
+>>>>>>> parent of 0f30cc6... Merge branch 'dev' into Change-target-functionality-
 
     void Awake()
     {
@@ -52,6 +56,7 @@ public class Movement : MonoBehaviour {
 
     void Update()
     {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -76,6 +81,10 @@ public class Movement : MonoBehaviour {
 >>>>>>> parent of 0f30cc6... Merge branch 'dev' into Change-target-functionality-
 =======
 >>>>>>> parent of 6449a3f... Revert "Fixed unlock cursor on death"
+=======
+        Turn();
+        Thrust();
+>>>>>>> parent of 0f30cc6... Merge branch 'dev' into Change-target-functionality-
 =======
         Turn();
         Thrust();
@@ -116,6 +125,7 @@ public class Movement : MonoBehaviour {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> parent of 6449a3f... Revert "Fixed unlock cursor on death"
 
@@ -138,6 +148,8 @@ public class Movement : MonoBehaviour {
         canMove = false;
     }
 >>>>>>> parent of 6449a3f... Revert "Fixed unlock cursor on death"
+=======
+>>>>>>> parent of 0f30cc6... Merge branch 'dev' into Change-target-functionality-
 =======
 >>>>>>> parent of 0f30cc6... Merge branch 'dev' into Change-target-functionality-
 }
