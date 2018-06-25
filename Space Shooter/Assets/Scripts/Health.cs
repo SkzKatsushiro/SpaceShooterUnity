@@ -29,6 +29,11 @@ public class Health : MonoBehaviour
 
     private void Regenerate()
     {
+        if (currentHealth <= 0)
+        {
+            return;
+        }
+
         currentHealth += regenarationAmount;
         if (currentHealth >= maxHealth)
         {
@@ -76,6 +81,8 @@ public class Health : MonoBehaviour
 
     private void BlowUp(Vector3 pos)
     {
+<<<<<<< HEAD
+=======
 
         if (tag.Equals("Player"))
         {
@@ -83,7 +90,15 @@ public class Health : MonoBehaviour
         }
 
         EventManager.BlowUp(pos);
+>>>>>>> Event-Driven-GUI-Layout
         DestroyObject(gameObject);
+        EventManager.BlowUp(pos);
+
+        if (gameObject.tag == "Player")
+        {
+            Debug.Log("BlowUp Player");
+            EventManager.PlayerDeath();
+        }
     }
 
     private void Hit(Vector3 pos)
