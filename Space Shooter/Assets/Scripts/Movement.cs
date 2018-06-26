@@ -19,6 +19,28 @@ public class Movement : MonoBehaviour {
     private float turnSpeed = 60;
 
     Transform playerTransform;
+    [SerializeField]
+    public float cameraSensitivity = 90;
+
+    private Transform playerTransform;
+
+    private float rotationX = 0.0f;
+    private float rotationY = 0.0f;
+
+    private bool canMove = false;
+
+    private void OnEnable()
+    {
+        EventManager.onStartGame += LockCursor;
+        EventManager.onPlayerDeath += UnlockCursor;
+    }
+
+    private void OnDisable()
+    {
+        EventManager.onStartGame -= LockCursor;
+        EventManager.onPlayerDeath -= UnlockCursor;
+    }
+    Transform playerTransform;
 
     void Awake()
     {
@@ -27,6 +49,12 @@ public class Movement : MonoBehaviour {
 
     void Update()
     {
+        if (!canMove)
+        {
+            return;
+        }
+            Turn();
+            Thrust();
         Turn();
         Thrust();
     }
@@ -60,5 +88,15 @@ public class Movement : MonoBehaviour {
                 truster.Activate(false);
             }
         }
+    }
+    void LockCursor()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        canMove = true;
+    }
+    void UnlockCursor()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        canMove = false;
     }
 }
