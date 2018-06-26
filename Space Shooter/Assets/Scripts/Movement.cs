@@ -18,7 +18,6 @@ public class Movement : MonoBehaviour {
     [SerializeField]
     private float turnSpeed = 60;
 
-    Transform playerTransform;
     [SerializeField]
     public float cameraSensitivity = 90;
 
@@ -40,7 +39,6 @@ public class Movement : MonoBehaviour {
         EventManager.onStartGame -= LockCursor;
         EventManager.onPlayerDeath -= UnlockCursor;
     }
-    Transform playerTransform;
 
     void Awake()
     {
@@ -53,8 +51,7 @@ public class Movement : MonoBehaviour {
         {
             return;
         }
-            Turn();
-            Thrust();
+
         Turn();
         Thrust();
     }

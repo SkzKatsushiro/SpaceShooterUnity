@@ -5,7 +5,7 @@ public class EventManager : MonoBehaviour
 
     public delegate void StartGameDelegate();
     public static StartGameDelegate onStartGame;
-    public static StartGameDelegate onPlayerDeath;
+
     public delegate void PlayerDeathDelegate();
     public static PlayerDeathDelegate onPlayerDeath;
 

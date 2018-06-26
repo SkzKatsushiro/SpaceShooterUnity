@@ -33,3 +33,4 @@ sysinfo.txt
 *.apk
 *.unitypackage
 Space Shooter/.vs/Space Shooter/v15/Server/sqlite3/storage.ide
+*.ide
