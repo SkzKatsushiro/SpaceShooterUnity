@@ -213,6 +213,7 @@ GameObject:
   - component: {fileID: 95438255247761226}
   - component: {fileID: 114274884222450880}
   - component: {fileID: 114376916022519846}
+  - component: {fileID: 65712580803981706}
   m_Layer: 0
   m_Name: x-wing
   m_TagString: X-Wing
@@ -2800,7 +2801,7 @@ Rigidbody:
   m_CollisionDetection: 0
 --- !u!65 &65712580803981706
 BoxCollider:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1194101218812302}
