@@ -58,11 +58,12 @@ public class Movement : MonoBehaviour {
 
     private void Turn()
     {
-        float yaw =  turnSpeed * Time.deltaTime * Input.GetAxis(HORIZONTAL);
-        float pitch = turnSpeed * Time.deltaTime * Input.GetAxis(PITCH);
-        float roll = turnSpeed * Time.deltaTime * Input.GetAxis(ROLL);
+        rotationX += Input.GetAxis("Mouse X") * cameraSensitivity * Time.deltaTime;
+        rotationY += Input.GetAxis("Mouse Y") * cameraSensitivity * Time.deltaTime;
+        rotationY = Mathf.Clamp(rotationY, -90, 90);
 
-        playerTransform.Rotate(pitch, yaw, -roll);
+        playerTransform.localRotation = Quaternion.AngleAxis(rotationX, Vector3.up);
+        playerTransform.localRotation *= Quaternion.AngleAxis(rotationY, Vector3.left);
     }
 
     private void Thrust()
