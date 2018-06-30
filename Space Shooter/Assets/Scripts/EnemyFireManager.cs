@@ -76,7 +76,7 @@ public class EnemyFireManager : MonoBehaviour
         {
             Debug.DrawRay(thisTransform.position, hit.point, Color.red);
             Debug.Log("Hit tag: " + hit.transform.tag);
-            if (hit.transform.CompareTag("Player"))
+            if (hit.transform.CompareTag("PlayerShip"))
             {
                 return true;
             }

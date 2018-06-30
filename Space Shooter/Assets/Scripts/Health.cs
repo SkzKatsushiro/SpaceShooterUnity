@@ -68,7 +68,7 @@ public class Health : MonoBehaviour
         float amount = currentHealth / (float)maxHealth;
         EventManager.TakeDamage(amount);
 
-        if (tag.Equals("Player"))
+        if (tag.Equals("PlayerShip"))
         {
             EventManager.UpdateShiledUI(amount);
         }
@@ -82,7 +82,7 @@ public class Health : MonoBehaviour
     private void BlowUp(Vector3 pos)
     {
 
-        if (tag.Equals("Player"))
+        if (tag.Equals("PlayerShip"))
         {
             EventManager.PlayerDeath();
         }
@@ -91,7 +91,7 @@ public class Health : MonoBehaviour
         DestroyObject(gameObject);
         EventManager.BlowUp(pos);
 
-        if (gameObject.tag == "Player")
+        if (gameObject.tag == "PlayerShip")
         {
             Debug.Log("BlowUp Player");
             EventManager.PlayerDeath();

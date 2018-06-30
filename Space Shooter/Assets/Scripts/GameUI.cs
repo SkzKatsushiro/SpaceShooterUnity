@@ -2,8 +2,6 @@
 
 public class GameUI : MonoBehaviour {
 
-    bool isDisplayed = true;
-
     [SerializeField]
     GameObject gameUI;
 

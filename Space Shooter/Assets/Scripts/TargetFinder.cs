@@ -26,11 +26,9 @@ public class TargetFinder : MonoBehaviour {
 
     public bool FoundTarget()
     {
- 
-
         if (targetTransform == null)
         {
-            GameObject target = GameObject.FindGameObjectWithTag("Player");
+            GameObject target = GameObject.FindGameObjectWithTag("PlayerShip");
 
             if (target == null)
             {

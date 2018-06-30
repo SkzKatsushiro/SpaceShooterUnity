@@ -5,9 +5,6 @@ using UnityEngine;
 public class Movement : MonoBehaviour {
 
     private static readonly string FORWARD = "Vertical";
-    private static readonly string HORIZONTAL = "Horizontal";
-    private static readonly string PITCH = "Pitch";
-    private static readonly string ROLL = "Roll";
 
     [SerializeField]
     private Thruster[] thrusters;
@@ -43,6 +40,7 @@ public class Movement : MonoBehaviour {
     void Awake()
     {
         playerTransform = transform;
+        LockCursor();
     }
 
     void Update()
@@ -89,6 +87,7 @@ public class Movement : MonoBehaviour {
     }
     void LockCursor()
     {
+        Debug.Log("in lockCursor");
         Cursor.lockState = CursorLockMode.Locked;
         canMove = true;
     }
